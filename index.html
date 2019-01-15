@@ -20,7 +20,8 @@
                         <button class="navbar-toggler" onclick="toogleLabels()"><span><i class="fa fa-bars fa-1x"></i></span></button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fa fa-user-o fa-lg"></i><span class="collapse" name="linkLabel">Client</span></a>
+                        <a onclick="showClient()" class="nav-link"><i class="fa fa-user-o fa-lg"></i><span class="collapse"
+                                name="linkLabel">Client</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"><i class="fa fa-exchange fa-lg"></i><span class="collapse" name="linkLabel">Interaction</span></a>
@@ -34,14 +35,15 @@
                                 history</span></a>
                     </li>
                     <li class="nav-item">
-                        <a target="_blank" href="http://greenmile.com/en/greenmile-driver/" class="nav-link"><i class="fa fa-leaf fa-lg"></i><span class="collapse" name="linkLabel">GreenMile</span></a>
+                        <a onclick="showGreenMile()" class="nav-link"><i class="fa fa-leaf fa-lg"></i><span class="collapse"
+                                name="linkLabel">GreenMile</span></a>
                     </li>
                 </ul>
             </div>
 
-            <div class="col">
+            <div class="col show" id="client">
                 <div class="row mt-4">
-                    <div class="col-md-6">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="row">
@@ -132,12 +134,36 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div>
+
+                                </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="col collapse" id="greenMile">
+                <div class="row fullHeiht">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="card shadow fullHeiht">
+                            <div class="card-body fullHeiht">
+                                <div class="row mb-3 fullHeiht">
+                                    <iframe frameborder="0" style="overflow:hidden;height:100%;width:100%" width="100%"
+                                        height="100%" src="http://greenmile.com/en/greenmile-driver/">
+
+                                    </iframe>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
@@ -150,4 +176,30 @@
         let spanText = document.getElementsByName('linkLabel');
         spanText.forEach(el => el.className = visibility == true ? 'collapse.show' : 'collapse');
     }
+
+    var views = document.getElementsByClassName('col');
+    let greenMile = document.getElementById('greenMile');
+    let client = document.getElementById('client');
+    const show = 'col show';
+    const collapse = 'collapse';
+
+    function showGreenMile() {
+        for (var i = 0; i < views.length; i++) {
+            {
+                views[i].className = collapse;
+            };
+            greenMile.className = show;
+        }
+    }
+    function showClient() {
+        for (var i = 0; i < views.length; i++) {
+            {
+                views[i].className = collapse;
+            };
+            client.className = show;
+        }
+    }
+
+
+
 </script>
