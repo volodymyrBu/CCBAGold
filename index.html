@@ -24,14 +24,14 @@
                                 name="linkLabel">Client</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fa fa-exchange fa-lg"></i><span class="collapse" name="linkLabel">Interaction</span></a>
+                        <a onclick="showInteraction()" class="nav-link"><i class="fa fa-exchange fa-lg"></i><span class="collapse" name="linkLabel">Interaction</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fa fa-bullhorn fa-lg"></i><span class="collapse" name="linkLabel">Service
+                        <a onclick="showRequest()" class="nav-link"><i class="fa fa-bullhorn fa-lg"></i><span class="collapse" name="linkLabel">Service
                                 request</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fa fa-history fa-lg"></i><span class="collapse" name="linkLabel">Client
+                        <a onclick="showClientHistory()" class="nav-link"><i class="fa fa-history fa-lg"></i><span class="collapse" name="linkLabel">Client
                                 history</span></a>
                     </li>
                     <li class="nav-item">
@@ -143,7 +143,232 @@
                     </div>
                 </div>
             </div>
+            <div class="col collapse" id="interaction">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="row mb-1">
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="wrapUpCode">WrapUpCode</label>
+                                            <select class="form-control" name="wrapUpCode" id="wrapUpCode">
+                                                <option>
+                                                    code1
+                                                </option>
+                                                <option>
+                                                    code2
+                                                </option>
+                                                <option>
+                                                    code3
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="source">Source</label>
+                                            <select class="form-control" name="source" id="source">
+                                                <option>
 
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-1">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="notes">Notes</label>
+                                            <textarea class="form-control" name="notes" id="notes">
+                                </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-1">
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="contactType">ContactType</label>
+                                            <select class="form-control" name="contactType" id="contactType">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="distributionChannel">DistributionChannel</label>
+                                            <select class="form-control" name="distributionChannel" id="distributionChannel">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="objective">Objective</label>
+                                            <select class="form-control" name="objective" id="objective">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-1">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="description">Description</label>
+                                            <textarea class="form-control" name="description" id="description">
+                                  </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col collapse" id="serviceRequest">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="row mb-1">
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="policyNumber">Policy number</label>
+                                            <select class="form-control" name="policyNumber" id="policyNumber">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="company">Company</label>
+                                            <select class="form-control" name="company" id="company">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="lob">LOB</label>
+                                            <select class="form-control" name="lob" id="lob">
+                                                <option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="category">Category</label>
+                                            <select class="form-control" name="category" id="category">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="subcategory">Sub-Category</label>
+                                            <select class="form-control" name="subcategory" id="subcategory">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="commMethod">CommMethod</label>
+                                            <select class="form-control" name="commMethod" id="commMethod">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="company">Summary</label>
+                                            <textarea class="form-control" name="summary" id="summary">
+                                  </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="source">Source</label>
+                                            <select class="form-control" name="source" id="source">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <div class="input-group-sm">
+                                            <label class="text-muted" for="correspondenceType">Correspondence</label>
+                                            <select class="form-control" name="correspondenceType" id="correspondenceType">
+                                                <option>
+
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col collapse" id="clientHistory">
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h4 id="dealing-with-specificity">Client History</h4>
+                                <div class="list-group">
+                                    <div>
+                                        <div>
+                                            <div class="card card-body">
+                                                4/5/2018<br>
+                                                CCBAGold <br>
+                                                Voice<br>
+                                                By Agent4
+                                            </div>
+                                            <div class="card card-body">
+                                                2/13/2018<br>
+                                                CCBAGold <br>
+                                                SMS<br>
+                                                By Agent5
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col collapse" id="greenMile">
                 <div class="row fullHeiht">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -180,8 +405,11 @@
     var views = document.getElementsByClassName('col');
     let greenMile = document.getElementById('greenMile');
     let client = document.getElementById('client');
+    let interaction = document.getElementById('interaction');
+    let serviceRequest = document.getElementById('serviceRequest');
+    let clientHistory = document.getElementById('clientHistory');
     const show = 'col show';
-    const collapse = 'collapse';
+    const collapse = 'col collapse';
 
     function showGreenMile() {
         for (var i = 0; i < views.length; i++) {
@@ -199,7 +427,28 @@
             client.className = show;
         }
     }
-
-
-
+    function showRequest() {
+        for (var i = 0; i < views.length; i++) {
+            {
+                views[i].className = collapse;
+            };
+            serviceRequest.className = show;
+        }
+    }
+    function showInteraction() {
+        for (var i = 0; i < views.length; i++) {
+            {
+                views[i].className = collapse;
+            };
+            interaction.className = show;
+        }
+    }
+    function showClientHistory() {
+        for (var i = 0; i < views.length; i++) {
+            {
+                views[i].className = collapse;
+            };
+            clientHistory.className = show;
+        }
+    }
 </script>
